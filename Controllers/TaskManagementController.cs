@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Data;
@@ -5,6 +6,7 @@ using TaskManagement.Models;
 
 [ApiController]
 [Route("tasks")]
+[Authorize]
 public class TasksController : ControllerBase
 {
     private readonly AppDbContext _context;
