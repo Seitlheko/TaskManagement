@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="3.6">
+    <id>Microsoft.EntityFrameworkCore.SqlServer</id>
+    <version>6.0.36</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://docs.microsoft.com/ef/core/</projectUrl>
+    <description>Microsoft SQL Server database provider for Entity Framework Core.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>Entity Framework Core entity-framework-core EF Data O/RM EntityFramework EntityFrameworkCore EFCore SQL Server</tags>
+    <serviceable>true</serviceable>
+    <repository type="git" url="https://github.com/dotnet/efcore" commit="fb8f1bd4d4700f194f8359feabf79b5d8fff55f9" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="6.0.36" exclude="Build" />
+        <dependency id="Microsoft.Data.SqlClient" version="2.1.7" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.IdentityModel.JsonWebTokens" version="6.36.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.IdentityModel.Protocols.OpenIdConnect" version="6.36.0" exclude="Build,Analyzers" />
+        <dependency id="System.Drawing.Common" version="4.7.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

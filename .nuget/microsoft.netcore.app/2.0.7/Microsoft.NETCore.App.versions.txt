@@ -1,0 +1,3 @@
+core-setup 2d61d0b043915bc948ebf98836fefe9ba942be11
+corefx d3d206ac7655553b68e6964cc74d5b8a99c31c41
+dotnet/versions/corefx 1329252b9b4e7b5baa657c52feca3cb9253281b7

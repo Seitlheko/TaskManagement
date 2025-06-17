@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="3.6">
+    <id>Pomelo.EntityFrameworkCore.MySql</id>
+    <version>6.0.2</version>
+    <authors>Laurents Meyer, Caleb Lloyd, Yuko Zheng</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql</projectUrl>
+    <iconUrl>https://avatars3.githubusercontent.com/u/19828814</iconUrl>
+    <description>Pomelo's MySQL database provider for Entity Framework Core.</description>
+    <copyright>Copyright 2022 © Pomelo Foundation</copyright>
+    <tags>pomelo mysql mariadb Entity Framework Core entity-framework-core ef efcore ef core orm sql</tags>
+    <repository type="git" url="https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql.git" commit="dbb32384bfc05c08f5a3f2f7844d4250c55a291e" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.EntityFrameworkCore.Relational" version="[6.0.7, 7.0.0)" include="All" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="MySqlConnector" version="2.1.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

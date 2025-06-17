@@ -1,0 +1,28 @@
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: TaskDb
+      MYSQL_ROOT_PASSWORD: ""  # Still needed for some MySQL setups; set to empty string
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+    container_name: taskapp
+    ports:
+      - "8080:5069"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=db;Database=TaskDb;Uid=root;Pwd=;
+
+volumes:
+  dbdata:
