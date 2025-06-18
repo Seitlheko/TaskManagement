@@ -96,16 +96,19 @@ using (var scope = app.Services.CreateScope())
             if (!dbContext.Users.Any(u => u.Email == adminEmail))
             {
                 string hashed = Convert.ToBase64String(
-                    hasher.ComputeHash(System.Text.Encoding.UTF8.GetBytes(rawPassword))
-                );
+                       hasher.ComputeHash(System.Text.Encoding.UTF8.GetBytes(rawPassword))
+);
 
                 dbContext.Users.Add(new TaskManagement.Models.User
                 {
                     Name = "System Admin",
                     Email = adminEmail,
                     Role = "Admin",
-                    
+                    PasswordHash = hashed,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
                 });
+
 
                 dbContext.SaveChanges();
                 Console.WriteLine("Seeded admin: admin@task.local / admin123");
@@ -122,10 +125,12 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Configure the HTTP request pipeline.
- 
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskManagement API V1");
+    c.RoutePrefix = "swagger"; // Serve at /swagger/
+});
 
 
 //app.UseHttpsRedirection();

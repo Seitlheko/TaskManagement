@@ -11,7 +11,8 @@ namespace TaskManagement.Models
 
         public string? Description{ get; set; }
 
-        public User? AssignedTo { get; set; }
+        public int? AssignedToId { get; set; } // Foreign key reference
+        public User? AssignedTo { get; set; }  // Navigation property
 
         public Status Status { get; set; } = Status.Pending;
 
